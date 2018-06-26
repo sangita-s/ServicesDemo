@@ -42,7 +42,8 @@ public class MyStartedService extends Service {
         Log.i(TAG, "onDelete, Thread name " + Thread.currentThread().getName());
     }
 
-    class MyAsyncTask extends AsyncTask<Integer, String, Void>{
+    //do in bg - param - int; onprogressupdate param string; doinbg - return type = onPostexec param
+    class MyAsyncTask extends AsyncTask<Integer, String, String>{
         private final String TAG = MyAsyncTask.class.getSimpleName();
         @Override
         protected void onPreExecute() {
@@ -52,7 +53,7 @@ public class MyStartedService extends Service {
         }
 
         @Override
-        protected Void doInBackground(Integer... params) {
+        protected String doInBackground(Integer... params) {
             Log.i(TAG, "doInBackground, Thread Name : " + Thread.currentThread().getName());
             int sleepTime = params[0];
             int ctr = 1;
@@ -65,7 +66,7 @@ public class MyStartedService extends Service {
                 }
                 ctr++;
             }
-            return null;
+            return "Counter stopped at " + ctr + "seconds";
         }
 
         @Override
@@ -77,10 +78,16 @@ public class MyStartedService extends Service {
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
+        protected void onPostExecute(String str) {
+            super.onPostExecute(str);
             stopSelf();
+            //Value received here from doInBackground
             Log.i(TAG, "onPostExecute, Thread Name : " + Thread.currentThread().getName());
+
+            //GOnna broadcast intent
+            Intent i = new Intent("action.service.to.activity");
+            i.putExtra("startServiceResult", str);
+            sendBroadcast(i);
         }
     }
 }

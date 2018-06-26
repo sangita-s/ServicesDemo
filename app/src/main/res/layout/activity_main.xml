@@ -22,4 +22,33 @@
         android:onClick="stopStartedService"
         android:text="Stop Started service"/>
 
+    <TextView
+        android:id="@+id/txvStartedServiceResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStopStartedServices"
+        android:textSize="20sp"
+        android:text="Started Service Result Here"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btnStartIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/btnStopStartedServices"
+        android:onClick="startIntentService"
+        android:text="Start Intent Service"/>
+
+    <TextView
+        android:id="@+id/txvIntentServiceResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStartIntentService"
+        android:textSize="20sp"
+        android:text="Intent Service Result Here"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
+
 </RelativeLayout>
