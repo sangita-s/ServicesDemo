@@ -1,4 +1,4 @@
-package generisches.lab.servicesdemo;
+package generisches.lab.servicesdemo.services;
 
 import android.app.Service;
 import android.content.Intent;

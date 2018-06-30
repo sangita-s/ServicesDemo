@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +17,14 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MyStartedService"></service>
-        <service android:name=".MyIntentService"></service>
+        <activity android:name=".activities.MyBoundActivity"/>
+        <activity android:name=".activities.MyMessengerActivity"/>
+
+        <service android:name=".services.MyStartedService"></service>
+        <service android:name=".services.MyIntentService"></service>
+        <service android:name=".services.MyBoundService"></service>
+        <service android:name=".services.MyMessengerService"
+            android:process=":my_own_process"></service>
     </application>
 
 </manifest>

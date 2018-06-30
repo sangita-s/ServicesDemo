@@ -1,4 +1,4 @@
-package generisches.lab.servicesdemo;
+package generisches.lab.servicesdemo.activities;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import generisches.lab.servicesdemo.R;
+import generisches.lab.servicesdemo.services.MyIntentService;
+import generisches.lab.servicesdemo.services.MyStartedService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         ResultReceiver myResultReceiver = new ResultReceiver(null);
 
+        //Explicit intent
         Intent i = new Intent(this, MyIntentService.class);
         i.putExtra("sleepTime", 10); // Will be managed by HandleIntent
         i.putExtra("receiver", myResultReceiver);
@@ -71,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(myStartedServiceReceiver);
+    }
+
+    public void moveToSecondActivity(View view) {
+        Intent i = new Intent(MainActivity.this, MyBoundActivity.class);
+        startActivity(i);
+    }
+
+    public void moveToMessengerActivity(View view) {
+        Intent i = new Intent(MainActivity.this, MyMessengerActivity.class);
+        startActivity(i);
     }
 
 

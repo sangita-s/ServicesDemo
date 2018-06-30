@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    tools:context=".activities.MyMessengerActivity">
+
+    <EditText
+        android:id="@+id/etNumOne"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="42dp"
+        android:text="0"
+        />
+
+    <EditText
+        android:id="@+id/etNumTwo"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="42dp"
+        android:text="0"
+        />
+
+    <TextView
+        android:id="@+id/txvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNumOne"
+        android:layout_centerHorizontal="true"
+        android:hint="Result"/>
+
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/etNumOne"
+        android:onClick="performAddOperation"
+        android:layout_marginTop="64dp"
+        />
+
+    <Button
+        android:id="@+id/btnBindService"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Bind Service"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/btnadd"
+        android:onClick="bindService"
+        android:layout_marginTop="64dp"
+        />
+
+    <Button
+        android:id="@+id/btnUnbindService"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Unbind Service"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/btnBindService"
+        android:onClick="unBindService"
+        android:layout_marginTop="64dp"
+        />
+
+</RelativeLayout>

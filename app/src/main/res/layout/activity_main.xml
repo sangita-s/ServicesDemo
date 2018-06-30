@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <Button
         android:id="@+id/btnStartStartedServices"
@@ -50,5 +50,23 @@
         android:text="Intent Service Result Here"
         android:gravity="center"
         android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btnMessengerActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Messenger Activity"
+        android:onClick="moveToMessengerActivity"
+        android:layout_above="@id/btnToBoundService"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnToBoundService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bound Service Demo Activity"
+        android:onClick="moveToSecondActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"/>
 
 </RelativeLayout>
